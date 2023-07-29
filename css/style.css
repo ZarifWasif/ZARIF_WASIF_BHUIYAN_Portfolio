@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800;900&family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -52,18 +54,19 @@ span {
 
 .navlist {
   display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .navlist a {
+  color: var(--second-color);
   font-size: 17px;
   font-weight: 500;
   margin: 0 25px;
   transition: all .45s ease;
-  padding: 10px 15px;
-  background: transparent;
-  border-radius: 30px;
-  color: rgb(126, 202, 232);
-  border: 1px solid rgb(126, 202, 232);
 }
 
 .navlist a:hover {
@@ -72,11 +75,6 @@ span {
 
 .navlist a.active {
   color: var(--main-color);
-  padding: none;
-  background: transparent;
-  border-radius: none;
-  border: none;
-  color: skyblue;
 }
 
 #menu-icon {
@@ -95,7 +93,7 @@ section {
 .home {
   position: relative;
   height: 100vh;
-  width: 100%;
+  width: 101%;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -118,7 +116,6 @@ section {
   border-radius: 5px;
   background: var(--main-color);
   color: var(--text-color);
-  border-radius: 30px;
 }
 
 .two {
@@ -193,6 +190,7 @@ section {
 .about-text h2 {
   font-size: var(--h2-font);
   line-height: 1;
+  flex-wrap: wrap;
 }
 
 .about-text h4 {
@@ -209,10 +207,12 @@ section {
   font-family: 'Times New Roman', Times, serif;
   line-height: 1.8;
   margin-bottom: 4rem;
+  flex-wrap: wrap;
 }
 
 .education {
   background: var(--second-bg-color);
+  width: 101%;
 }
 
 .main-text {
@@ -282,8 +282,6 @@ section {
 }
 
 .row {
-  height: 90%;
-  width: 70%;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
@@ -315,7 +313,7 @@ section {
 }
 
 .layer h4 {
-  font: 15px;
+  font: 20px;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -323,7 +321,7 @@ section {
 .layer p {
   color: var(--second-color);
   font-size: 1rem;
-  line-height: 1;
+  line-height: 1.8;
   color: white;
 }
 
@@ -354,6 +352,7 @@ section {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 2.5rem;
+  width: 101%;
 }
 
 .contact-text h4 {
@@ -452,4 +451,93 @@ footer {
   padding: 40px;
   text-align: center;
   width: 100vw;
+}
+
+@media (max-width: 1480px) {
+  header {
+    padding: 12px 2.5%;
+    transition: .1s;
+  }
+
+  section {
+    padding: 110px 3% 60px;
+  }
+
+  .end {
+    padding: 15px 3%;
+  }
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --big-font: 4rem;
+    --h2-font: 2.5rem;
+    --p-font: 1rem;
+    transition: .1s;
+  }
+
+  .home-text h3 {
+    font-size: 2.5rem;
+  }
+
+  .home {
+    height: 87vh;
+  }
+}
+
+@media (max-width:920) {
+  .about {
+    grid-template-columns: 1fr;
+
+  }
+
+  .about-img img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navlist {
+    position: absolute;
+    top: -1000px;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+    text-align: left;
+    transition: all .45s ease;
+
+  }
+
+  .navlist a {
+    display: block;
+    margin: 17px;
+    font-size: 20px;
+    transition: all .45s ease;
+    color: var(--text-color);
+
+  }
+
+  .navlist a:hover {
+    color: var(--main-color);
+  }
+
+  navlist a.active {
+    color: var(--text-color);
+  }
+
+  .navlist.open {
+    top: 100%;
+  }
 }
